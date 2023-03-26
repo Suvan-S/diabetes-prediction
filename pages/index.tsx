@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Questionare from '../components/Questionare1'
 import Title from '../components/Title'
 import Intro from '../components/Intro'
 
