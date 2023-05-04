@@ -12,7 +12,7 @@ const IndexPage = () => (
                 <Intro/>
             </div>
             <div className='flex justify-center w-full'>
-                <Link href={`/predict`} className='flex justify-center items-center w-2/3 h-20 text-3xl text-white rounded-lg bg-emerald-400 border-emerald-400 border-2'>
+                <Link href={`/predict`} className='flex justify-center items-center w-2/3 h-20 text-3xl text-emerald-400 rounded-lg bg-transparent border-emerald-400 border-2 hover:text-white hover:bg-emerald-500 hover:border-emerald-500'>
                     <button>
                         Goto Diabetes Predictor {'>'}
                     </button>

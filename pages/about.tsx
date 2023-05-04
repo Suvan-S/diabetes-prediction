@@ -6,8 +6,19 @@ const IndexPage = () => (
         <div className='py-2'>
 		    <Title/>
         </div>
-        <div className='flex flex-col justify-center h-4/5 text-white'>
-            We developed this predictor to identify if there is a possibility for the user to fall into the Diabetes spectrum.
+        <div className='flex flex-col h-4/5 text-white'>
+            <span className='mx-20 mt-10 text-5xl'>
+                We developed this predictor to identify if there is a possibility for the user to fall into the Diabetes spectrum.
+            </span>
+            <span className='mx-10 mt-10 text-3xl underline text-emerald-400'>
+                Developers :
+            </span>
+            <span className='mx-20 mt-10 text-3xl'>
+                Suvan S (CSE IV Yr - Sathyabama University)
+            </span>
+            <span className='mx-20 mt-10 text-3xl'>
+                Srivatsan S (CSE IV Yr - Sathyabama University)
+            </span>
         </div>
 	</div>
 )
