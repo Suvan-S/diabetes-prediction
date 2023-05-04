@@ -6,21 +6,21 @@ import { useEffect, useState } from 'react'
 const predict = () => {
     
     const [Age, setAge] = useState("0");
-    const [Gender, setGender] = useState(null);
-    const [Polyuria, setPolyuria] = useState(null);
-    const [Polydipsia, setPolydipsia] = useState(null);
-    const [sudden_weight_loss, setsudden_weight_loss] = useState(null);
-    const [weakness, setweakness] = useState(null);
-    const [Polyphagia, setPolyphagia] = useState(null);
-    const [Genital_thrush, setGenital_thrush] = useState(null);
-    const [visual_blurring, setvisual_blurring] = useState(null);
-    const [Itching, setItching] = useState(null);
-    const [Irritability, setIrritability] = useState(null);
-    const [delayed_healing, setdelayed_healing] = useState(null);
-    const [partial_paresis, setpartial_paresis] = useState(null);
-    const [muscle_stiffness, setmuscle_stiffness] = useState(null);
-    const [Alopecia, setAlopecia] = useState(null);
-    const [Obesity, setObesity] = useState(null);
+    const [Gender, setGender] = useState(false);
+    const [Polyuria, setPolyuria] = useState(false);
+    const [Polydipsia, setPolydipsia] = useState(false);
+    const [sudden_weight_loss, setsudden_weight_loss] = useState(false);
+    const [weakness, setweakness] = useState(false);
+    const [Polyphagia, setPolyphagia] = useState(false);
+    const [Genital_thrush, setGenital_thrush] = useState(false);
+    const [visual_blurring, setvisual_blurring] = useState(false);
+    const [Itching, setItching] = useState(false);
+    const [Irritability, setIrritability] = useState(false);
+    const [delayed_healing, setdelayed_healing] = useState(false);
+    const [partial_paresis, setpartial_paresis] = useState(false);
+    const [muscle_stiffness, setmuscle_stiffness] = useState(false);
+    const [Alopecia, setAlopecia] = useState(false);
+    const [Obesity, setObesity] = useState(false);
 
     const [diabetesPredictionResult, setDiabetesPredictionResult] = useState(false)
     const [isResultSet, setIsResultSet] = useState(false)
@@ -71,28 +71,61 @@ const predict = () => {
 
     let onClickPredict = async () => {
         let count = 0;
-        let inputArray = [];
-        inputArray.push(Polyuria);
-        inputArray.push(Polydipsia);
-        inputArray.push(sudden_weight_loss);
-        inputArray.push(weakness);
-        inputArray.push(Polyphagia);
-        inputArray.push(Genital_thrush);
-        inputArray.push(visual_blurring);
-        inputArray.push(Itching);
-        inputArray.push(Irritability);
-        inputArray.push(delayed_healing);
-        inputArray.push(partial_paresis);
-        inputArray.push(muscle_stiffness);
-        inputArray.push(Alopecia);
-        inputArray.push(Obesity);
-
-        inputArray.forEach(element => {
-            if (element) {
-                count += 1;
-            }
-        });
-
+        
+        console.log(count);
+        
+        // let inputArray = [];
+        
+        if(Polyuria){
+            count += 1
+        }
+        if(Polydipsia){
+            count += 1
+        }
+        if(sudden_weight_loss){
+            count += 1
+        }
+        if(weakness){
+            count += 1
+        }
+        if(Polyphagia){
+            count += 1
+        }
+        if(Genital_thrush){
+            count += 1
+        }
+        if(visual_blurring){
+            count += 1
+        }
+        if(Itching){
+            count += 1
+        }
+        if(Irritability){
+            count += 1
+        }
+        if(delayed_healing){
+            count += 1
+        }
+        if(partial_paresis){
+            count += 1
+        }
+        if(muscle_stiffness){
+            count += 1
+        }
+        if(Alopecia){
+            count += 1
+        }
+        if(Obesity){
+            count += 1
+        }
+                
+        // inputArray.forEach(element => {
+        //     if (!element) {
+        //         count += 1;
+        //     }
+        // });
+        
+        console.log(count);
         if (count >= 8) {
             setDiabetesPredictionResult(true)
         }
@@ -101,21 +134,21 @@ const predict = () => {
         }
         setIsResultSet(true);
         setAge('0');
-        setGender(null);
-        setPolyuria(null);
-        setPolydipsia(null);
-        setsudden_weight_loss(null);
-        setweakness(null);
-        setPolyphagia(null);
-        setGenital_thrush(null);
-        setvisual_blurring(null);
-        setItching(null);
-        setIrritability(null);
-        setdelayed_healing(null);
-        setpartial_paresis(null);
-        setmuscle_stiffness(null);
-        setAlopecia(null);
-        setObesity(null);
+        setGender(false);
+        setPolyuria(false);
+        setPolydipsia(false);
+        setsudden_weight_loss(false);
+        setweakness(false);
+        setPolyphagia(false);
+        setGenital_thrush(false);
+        setvisual_blurring(false);
+        setItching(false);
+        setIrritability(false);
+        setdelayed_healing(false);
+        setpartial_paresis(false);
+        setmuscle_stiffness(false);
+        setAlopecia(false);
+        setObesity(false);
     }
 
     return (
@@ -137,7 +170,14 @@ const predict = () => {
                     // </div>
                     <div className="flex flex-col mt-10 h-96 items-center justify-center mx-5">
                         <p className="text-white text-3xl font-bold font-serif">
-                            The possibility of you having Diabetes is {diabetesPredictionResult ? "HIGH" : "LOW"}
+                            The possibility of you having Diabetes is 
+                            {
+                                diabetesPredictionResult 
+                                ?
+                                    <span className='text-red-500'> HIGH</span>
+                                :
+                                    <span className='text-emerald-400'> LOW</span>
+                            }
                         </p>
                         <button className='m-5 justify-center items-center w-1/4 h-20 text-3xl text-white rounded-lg bg-emerald-400 border-emerald-400 border-2' onClick={onClickBack}>
                             Back
@@ -227,22 +267,7 @@ const predict = () => {
 
                         <div className='flex justify-center mt-3'>
                             {
-                                Age != '0' &&
-                                Gender != null &&
-                                Polyuria != null &&
-                                Polydipsia != null &&
-                                sudden_weight_loss != null &&
-                                weakness != null &&
-                                Polyphagia != null &&
-                                Genital_thrush != null &&
-                                visual_blurring != null &&
-                                Itching != null &&
-                                Irritability != null &&
-                                delayed_healing != null &&
-                                partial_paresis != null &&
-                                muscle_stiffness != null &&
-                                Alopecia != null &&
-                                Obesity != null
+                                Age != '0'
                                 ?
                                     <button className='flex justify-center items-center w-2/3 h-20 text-3xl text-emerald-400 rounded-lg bg-transparent border-emerald-400 border-2 hover:text-white hover:bg-emerald-500 hover:border-emerald-500' onClick={onClickPredict}>Predict</button>
                                 :
